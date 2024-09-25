@@ -15,7 +15,7 @@ const serverCert = fs.readFileSync('ssl/certificate.cert');
 const defaultAPI  = require('./routes/status');
 const authAPI = require('./routes/auth.js');
 const readAPI = require('./routes/data.js');
-const page = require('./routes/index.js');
+const page = require('./routes/page.js');
 const images = require('./routes/files.js');
 
 require('dotenv').config();

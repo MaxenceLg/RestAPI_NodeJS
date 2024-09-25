@@ -1,4 +1,5 @@
 require('tailwindcss');
+const status = require('../routes/status.js');
 
 const header = `
 <!DOCTYPE html>
@@ -14,7 +15,10 @@ const header = `
 const body = `
 <body class="bg-gray-950 flex flex-col text-white">
 <h1 class="font-bold text-6xl self-center">API</h1>
-<p>Status : <strong id="max"></strong><script></script></p>
+<p>Status : <strong>` +  `</strong></p>
+`
+
+const form = `
 <form action="https://127.0.0.1:8090/auth/register" method="post" class="flex flex-col items-center">
     <h2>Register</h2>
     <input type="text" name="name" placeholder="Nom"/>
