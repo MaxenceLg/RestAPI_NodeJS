@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const page = require('./html');
+const page = require('../pages/html');
 const date = new Date();
 require('tailwindcss');
 

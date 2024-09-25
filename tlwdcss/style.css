@@ -504,18 +504,8 @@ video {
 .flex {
   display: flex;
 }
-.size-24 {
-  width: 6rem;
-  height: 6rem;
-}
-.w-9\/12 {
-  width: 75%;
-}
 .flex-col {
   flex-direction: column;
-}
-.items-start {
-  align-items: flex-start;
 }
 .items-center {
   align-items: center;
@@ -526,16 +516,12 @@ video {
 .justify-items-center {
   justify-items: center;
 }
+.self-center {
+  align-self: center;
+}
 .bg-gray-950 {
   --tw-bg-opacity: 1;
   background-color: rgb(3 7 18 / var(--tw-bg-opacity));
-}
-.align-middle {
-  vertical-align: middle;
-}
-.text-9xl {
-  font-size: 8rem;
-  line-height: 1;
 }
 .text-6xl {
   font-size: 3.75rem;
@@ -547,6 +533,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-gray-300 {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 .hover\:cursor-pointer:hover {
   cursor: pointer;

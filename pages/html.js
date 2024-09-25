@@ -12,17 +12,14 @@ const header = `
 </head>
 `
 const body = `
-<body class="bg-gray-950 flex flex-col justify-items-center items-center text-white">
-<h1 class="font-bold text-6xl">API</h1>
-<form action="https://127.0.0.1:8090/auth/register" method="post">
-    <input type="text" name="name" placeholder="nom"/>
-    <input type="email" name="email" placeholder="Login"/>
-    <input type="password" name="password" placeholder="Password"/>
-    <input type="submit" name="submit" value="Envoyer" class="hover:cursor-pointer"/>
-</form>
-<form action="https://127.0.0.1:8090/auth/deleteall" method="post" class="">
-    <input type="email" name="email" placeholder="email"/>
-    <input type="password" name="password" placeholder="Password"/>
+<body class="bg-gray-950 flex flex-col text-white">
+<h1 class="font-bold text-6xl self-center">API</h1>
+<p>Status : <strong id="max"></strong><script></script></p>
+<form action="https://127.0.0.1:8090/auth/register" method="post" class="flex flex-col items-center">
+    <h2>Register</h2>
+    <input type="text" name="name" placeholder="Nom"/>
+    <input type="email" name="email" placeholder="Email"/>
+    <input type="password" name="password" placeholder="Mot de passe"/>
     <input type="submit" name="submit" value="Envoyer" class="hover:cursor-pointer"/>
 </form>
 </body>

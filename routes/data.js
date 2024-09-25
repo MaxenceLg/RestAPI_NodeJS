@@ -1,8 +1,12 @@
 const router = require('express').Router();
-const Data = require('../models/usermodel');
+const Users = require('../models/user');
 
 router.get('/users', async (req,res) => {
-    res.json(await Data.find());
+    res.json(await Users.find());
 })
+
+router.get('/user/:name', async (req,res,next) => {
+    res.json(await Users.findOne({name :req.params['name']}));
+});
 
 module.exports = router;
