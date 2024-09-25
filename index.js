@@ -12,11 +12,11 @@ tlwdcss.postcss = true;
 const serverKey = fs.readFileSync('ssl/privatekey.key');
 const serverCert = fs.readFileSync('ssl/certificate.cert');
 
-const defaultAPI  = require('./routes/status/status');
-const authAPI = require('./routes/auth/auth');
-const readAPI = require('./routes/data/users');
-const page = require('./routes/page/index.js');
-const images = require('./routes/files/index.js');
+const defaultAPI  = require('./routes/status');
+const authAPI = require('./routes/auth');
+const readAPI = require('./routes/data');
+const page = require('./pages/index.js');
+const images = require('./routes/files.js');
 
 require('dotenv').config();
 const port = process.env.port || 8080;

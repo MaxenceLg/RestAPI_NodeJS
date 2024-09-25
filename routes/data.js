@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const Users = require('../../models/usermodel');
+const Data = require('../models/usermodel');
 
 router.get('/users', async (req,res) => {
-    res.json(await Users.find());
+    res.json(await Data.find());
 })
 
 module.exports = router;
