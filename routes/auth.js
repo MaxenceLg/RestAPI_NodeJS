@@ -5,8 +5,13 @@ const bcrypt = require('bcryptjs');
 
 
 
-router.post('/login'
+router.post('/login',
+    [
+        check('email', 'error_email_invalid').isEmail(),
+        check('password', 'error_password_required').exists(),
+    ]
     ,async (req, res,next) => {
+
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).send({error: errors.array()});
@@ -33,11 +38,15 @@ router.post('/login'
     });
 
 router.post('/register', [
-        //check('name', 'error_name_required').not().isEmpty(),
-        //check('email', 'error_email_required').isEmail(),
-        //check('password', 'error_password_complexity').matches(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#$%^&*()_+=\-[\]{}|\\:;'<>,.?/~`]).{12,}$/)
+        check('name', 'error_name_required').not().isEmpty(),
+        check('email', 'error_email_required').isEmail(),
+        check('password', 'error_password_complexity').matches(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#$%^&*()_+=\-[\]{}|\\:;'<>,.?/~`]).{12,}$/)
     ],
     async (req, res) => {
+
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) return res.status(400).json({ message: errors.array()[0].msg });
+
         const { name, email, password } = req.body;
         try {
             let user = await Users.findOne({email});

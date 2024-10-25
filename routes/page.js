@@ -4,9 +4,9 @@ const page = require('../pages/html');
 const date = new Date();
 require('tailwindcss');
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     console.log(date.toLocaleString() + " Trying to get the file : " + req.originalUrl);
-    res.send(page.header + page.body + '</html>');
+    res.send(await page.html());
 });
 
 module.exports = {
